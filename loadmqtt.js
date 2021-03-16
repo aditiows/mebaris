@@ -1,7 +1,7 @@
 script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js"
 
 var host = "broker.hivemq.com";
-var port = "1883";
+var port = "8000";
 var clientID = "58d3444cc5ed4bd0a2bc01acf7b28e81";
 
 
