@@ -14,7 +14,7 @@ console.log("attempting to connect...")
 // called when the client connects
 function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
-  console.log("onConnect");
+  console.log("Terkoneksi");
   client.subscribe("/mebaris01/nurusallam/suhu");
   message = new Paho.MQTT.Message("Hello");
   message.destinationName = "/mebaris01/nurusallam/suhu";
@@ -26,12 +26,12 @@ function onConnect() {
   //});
   //newMessage = new Paho.MQTT.Message("Sent using synonyms!");
   //newMessage.topic = "/World";
-  client.publish(message)
-  client.publish("/mebaris01/nurusallam/suhu", "Hello from a better publish call!", 1, false)
+  //client.publish(message)
+  //client.publish("/mebaris01/nurusallam/suhu", "Hello from a better publish call!", 1, false)
 
-  topicMessage = new Paho.MQTT.Message("This is a message where the topic is set by setTopic");
-  topicMessage.topic = "/mebaris01/nurusallam/suhu";
-  client.publish(topicMessage)
+  //topicMessage = new Paho.MQTT.Message("This is a message where the topic is set by setTopic");
+ // topicMessage.topic = "/mebaris01/nurusallam/suhu";
+  //client.publish(topicMessage)
 
 
 }
