@@ -14,7 +14,7 @@ console.log("mencoba untuk terkoneksi...");
 // called when the client connects
 function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
-  console.log("Terkoneksi");
+  console.log("Koneksi Berhasil");
   client.subscribe("mebaris01/nurusallam/suhu");
   message = new Paho.MQTT.Message("Aman");
   message.destinationName = "mebaris01/nurusallam/suhu";
