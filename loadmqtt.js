@@ -39,4 +39,8 @@ function onConnectionLost(responseObject) {
   if (responseObject.errorCode !== 0) {
     console.log("onConnectionLost:"+responseObject.errorMessage);
   }
+// called when a message arrives
+function onMessageArrived(message) {
+  console.log(""+message.payloadString);
+  }
 }
