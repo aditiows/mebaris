@@ -8,7 +8,7 @@ client.onMessageArrived = onMessageArrived;
 // connect the client
 client.connect({onSuccess:onConnect,
                 useSSL: true});
-console.log("attempting to connect...")
+console.log("mencoba untuk terkoneksi dengan " + host +" "+ port);
 
 
 // called when the client connects
