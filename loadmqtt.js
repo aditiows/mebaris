@@ -40,3 +40,9 @@ function onConnectionLost(responseObject) {
     console.log("onConnectionLost:"+responseObject.errorMessage);
   }
 }
+
+// display the value of "suhu"
+function onMessageArrived(message) {
+  document.getElementById('suhu').innerHTML = (message.payloadString+"°");
+  }
+
