@@ -40,3 +40,8 @@ function onConnectionLost(responseObject) {
     console.log("onConnectionLost:"+responseObject.errorMessage);
   }
 }
+
+// display the value of "lembap"
+function onMessageArrived(message) {
+  document.getElementById('lembap').innerHTML = (message.payloadString+"%");
+  }
