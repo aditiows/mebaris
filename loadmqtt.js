@@ -10,6 +10,8 @@ client.connect({onSuccess:onConnect,
                 useSSL: true});
 console.log("mencoba untuk terkoneksi...");
 
+var suhu = ""; 
+var lembap = "";
 
 // called when the client connects
 function onConnect() {
@@ -43,8 +45,7 @@ function onConnectionLost(responseObject) {
     console.log("onConnectionLost:"+responseObject.errorMessage);
   }
 }
-var suhu = ""; 
-var lembap = ""; ... 
+
 function onMessageArrived(message) 
 { if(message.destinationName == "mebaris01/nurusallam/suhu"){ suhu = message.payloadString; } 
 if(message.destinationName == "mebaris01/nurusallam/lembap"){ lembap = message.payloadString; }
