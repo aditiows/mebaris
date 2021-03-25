@@ -15,11 +15,12 @@ function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
   console.log("Koneksi Berhasil");
   client.subscribe("mebaris01/nurusallam/suhu");
-  message = new Paho.MQTT.Message("Aman");
+  message = new Paho.MQTT.Message("33");
   message.destinationName = "mebaris01/nurusallam/suhu";
   console.log("Suhu Monitor");
+  client.send(message);
   client.subscribe("mebaris01/nurusallam/lembap");
-  message = new Paho.MQTT.Message("Kering");
+  message = new Paho.MQTT.Message("77");
   message.destinationName = "mebaris01/nurusallam/lembap";
   console.log("Kelembapan Monitor");
   client.send(message);
