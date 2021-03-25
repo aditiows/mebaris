@@ -16,8 +16,11 @@ function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
   console.log("Koneksi Suhu Berhasil");
   client.subscribe("mebaris01/nurusallam/suhu");
+  client.subscribe("mebaris01/nurusallam/lembap");
   message = new Paho.MQTT.Message("Aman");
   message.destinationName = "mebaris01/nurusallam/suhu";
+  message = new Paho.MQTT.Message("Kering");
+  message.destinationName = "mebaris01/nurusallam/lembap";
   client.send(message);
   //console.log(client.getTraceLog());
 
@@ -40,9 +43,11 @@ function onConnectionLost(responseObject) {
     console.log("onConnectionLost:"+responseObject.errorMessage);
   }
 }
-
-// display the value of "suhu"
-function onMessageArrived(message) {
+var suhu = ""; 
+var lembap = ""; ... 
+function onMessageArrived(message) 
+{ if(message.destinationName == "mebaris01/nurusallam/suhu"){ suhu = message.payloadString; } 
+if(message.destinationName == "mebaris01/nurusallam/lembap"){ lembap = message.payloadString; }
   document.getElementById('suhu').innerHTML = (message.payloadString+"°");
   }
 
