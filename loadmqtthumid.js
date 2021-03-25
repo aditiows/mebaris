@@ -2,8 +2,8 @@
 client = new Paho.MQTT.Client("test.mosquitto.org", Number(8081), "mebarishumid");
 client.startTrace();
 // set callback handlers
-client.onConnectionLost = onConnectionLost;
-client.onMessageArrived = onMessageArrived;
+client.onConnectionLost = onConnectionLost2;
+client.onMessageArrived = onMessageArrived2;
 
 // connect the client
 client.connect({onSuccess:onConnect,
@@ -16,9 +16,9 @@ function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
   console.log("Koneksi Kelembapan Berhasil");
   client.subscribe("mebaris01/nurusallam/lembap");
-  message = new Paho.MQTT.Message("Kering");
-  message.destinationName = "mebaris01/nurusallam/lembap";
-  client.send(message);
+  message2 = new Paho.MQTT.Message("Kering");
+  message2.destinationName = "mebaris01/nurusallam/lembap";
+  client.send(message2);
   //console.log(client.getTraceLog());
 
   //client.getTraceLog().forEach(function(line){
@@ -42,6 +42,6 @@ function onConnectionLost(responseObject) {
 }
 
 // display the value of "lembap"
-function onMessageArrived(message) {
-  document.getElementById('lembap').innerHTML = (message.payloadString+"%");
+function onMessageArrived(message2) {
+  document.getElementById('lembap').innerHTML = (message2.payloadString+"%");
   }
