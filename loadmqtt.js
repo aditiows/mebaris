@@ -18,6 +18,7 @@ function onConnect() {
   client.subscribe("mebaris01/nurusallam/lembap");
   message = new Paho.MQTT.Message("Aman");
   message.destinationName = "mebaris01/nurusallam/suhu";
+  client.send(message);
   message = new Paho.MQTT.Message("Kering");
   message.destinationName = "mebaris01/nurusallam/lembap";
   client.send(message);
