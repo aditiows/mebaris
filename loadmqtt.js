@@ -16,7 +16,7 @@ var lembap = "";
 // called when the client connects
 function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
-  console.log("Koneksi Suhu Berhasil");
+  console.log("Koneksi Berhasil");
   client.subscribe("mebaris01/nurusallam/suhu");
   client.subscribe("mebaris01/nurusallam/lembap");
   message = new Paho.MQTT.Message("Aman");
