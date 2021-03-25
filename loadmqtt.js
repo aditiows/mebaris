@@ -17,13 +17,13 @@ function onConnect() {
   client.subscribe("mebaris01/nurusallam/suhu");
   message = new Paho.MQTT.Message("Aman");
   message.destinationName = "mebaris01/nurusallam/suhu";
-  client.send(message);
   console.log("Suhu Monitor");
   client.subscribe("mebaris01/nurusallam/lembap");
   message = new Paho.MQTT.Message("Kering");
   message.destinationName = "mebaris01/nurusallam/lembap";
-  client.send(message);
   console.log("Kelembapan Monitor");
+  client.send(message);
+  console.log("Pesan berhasil terkirim");
   //console.log(client.getTraceLog());
 
   //client.getTraceLog().forEach(function(line){
