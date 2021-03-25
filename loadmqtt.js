@@ -46,8 +46,8 @@ function onConnectionLost(responseObject) {
   }
 }
 
-function onMessageArrived(message) 
-{ if(message.destinationName == "mebaris01/nurusallam/suhu"){ suhu = message.payloadString; } 
+function onMessageArrived(message)  {
+if(message.destinationName == "mebaris01/nurusallam/suhu"){ suhu = message.payloadString; } 
 if(message.destinationName == "mebaris01/nurusallam/lembap"){ lembap = message.payloadString; }
   }
 
