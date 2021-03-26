@@ -49,5 +49,5 @@ function onConnectionLost(responseObject) {
 
 function onMessageArrived(message)	{
 if(message.destinationName = "mebaris01/nurusallam/lembap") { console.log("kelembapan:"+message.payloadString+"%")}
-else if(message.destinationName = "mebaris01/nurusallam/suhu") { console.log("suhu:"+message.payloadString+"°"); }
+if(message.destinationName = "mebaris01/nurusallam/suhu") { console.log("suhu:"+message.payloadString+"°"); }
 	}
