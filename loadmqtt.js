@@ -4,6 +4,7 @@ client.startTrace();
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
+message.destinationName = destination;
 
 // connect the client
 client.connect({onSuccess:onConnect,
@@ -25,11 +26,11 @@ function onConnect() {
   console.log("Humidity monitored");
   client.send(message);
   console.log("Pesan berhasil terkirim");
-  console.log(client.getTraceLog());
+  //console.log(client.getTraceLog());
 
-  client.getTraceLog().forEach(function(line){
-  console.log('Trace: ' + line)
-  });
+  //client.getTraceLog().forEach(function(line){
+  //console.log('Trace: ' + line)
+  //});
   //newMessage = new Paho.MQTT.Message("Sent using synonyms!");
   //newMessage.topic = "mebaris01/nurusallam/";
   //client.publish(message)
@@ -47,18 +48,18 @@ function onConnectionLost(responseObject) {
   }
 }
 
-var temp = function onMessageArrived(message) {message.destinationName = "mebaris01/nurusallam/suhu"};
-var humid = function onMessageArrived(message) {message.destinationName = "mebaris01/nurusallam/lembap"};
+var dtemp = destination = "mebaris01/nurusallam/suhu";
+var dhumid = destination = "mebaris01/nurusallam/lembap";
 
-function temp(message) {
+var temp function dtemp(message) {
   console.log(+message.payloadString+"°");
   }
 
-function humid(message) {
+var humid function dhumid(message) {
   console.log(+message.payloadString+"%");
   }
 
 function onMessageArrived(message) {
   if(temp){console.log("Ada pesan suhu masuk");}
-  if(humid){console.log("Ada pesan kelembapan masuk");}
+  if else(humid){console.log("Ada pesan kelembapan masuk");}
 }
