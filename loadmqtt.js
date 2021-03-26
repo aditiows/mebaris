@@ -47,8 +47,8 @@ function onConnectionLost(responseObject) {
   }
 }
 
-temp = onMessageArrived(message) {if(message.destinationName = "mebaris01/nurusallam/lembap")};
-humid = onMessageArrived(message) {if(message.destinationName = "mebaris01/nurusallam/lembap")};
+temp = function onMessageArrived(message) {if(message.destinationName = "mebaris01/nurusallam/lembap")};
+humid = function onMessageArrived(message) {if(message.destinationName = "mebaris01/nurusallam/lembap")};
 
 funtion temp {
   console.log("suhu:"+message.payloadString+"°");
