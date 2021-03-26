@@ -52,15 +52,3 @@ function onConnectionLost(responseObject) {
 }
 
 var destination = message.destinationName;
-var temp = "";
-var humid = "";
-
-function onMessageArrived(message) {
-  console.log(message.destinationName+" "+message.payloadString)
-  if (message.destinationName == "mebaris01/nurusallam/suhu") {
-  var temp = document.getElementById("suhu").innerHTML(message.payloadString+"°");
-  }
-  if (message.destinationName == "mebaris01/nurusallam/lembap") {
-  var humid = document.getElementById("suhu").innerHTML(message.payloadString+"%");
-  }
-}
