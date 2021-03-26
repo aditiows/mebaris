@@ -5,7 +5,6 @@ client.startTrace();
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 message = new Paho.MQTT.Message("");
-message.destinationName = destination;
 
 // connect the client
 client.connect({onSuccess:onConnect,
@@ -49,6 +48,7 @@ function onConnectionLost(responseObject) {
   }
 }
 
+var message.destinationName = destination;
 var dtemp = destination = "mebaris01/nurusallam/suhu";
 var dhumid = destination = "mebaris01/nurusallam/lembap";
 
