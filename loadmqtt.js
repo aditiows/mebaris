@@ -14,14 +14,14 @@ console.log("mencoba untuk terkoneksi...");
 function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
   console.log("Koneksi Berhasil");
-  client.subscribe("mebaris01/nurusallam/suhu/");
+  client.subscribe("mebaris01/nurusallam/suhu");
   //message = new Paho.MQTT.Message("33");
   //message.destinationName = "mebaris01/nurusallam/suhu";
   console.log("Temperature monitored");
   //client.send(message);
-  client.subscribe("mebaris01/nurusallam/lembap/");
+  client.subscribe("mebaris01/nurusallam/lembap");
   message = new Paho.MQTT.Message("jos");
-  message.destinationName = "mebaris01/nurusallam/";
+  message.destinationName = "mebaris01/nurusallam";
   console.log("Humidity monitored");
   client.send(message);
   console.log("Pesan berhasil terkirim");
@@ -50,6 +50,6 @@ function onConnectionLost(responseObject) {
 var temp = ("suhu:"+message.payloadString+"°");
 var humid = ("kelembapan:"+message.payloadString+"%");
 function onMessageArrived(message)	{
-if(message.destinationName = "mebaris01/nurusallam/lembap/") { console.log(humid);}
-if(message.destinationName = "mebaris01/nurusallam/suhu/") { console.log(temp);}
+if(message.destinationName = "mebaris01/nurusallam/lembap") { console.log(humid);}
+if(message.destinationName = "mebaris01/nurusallam/suhu") { console.log(temp);}
 }
