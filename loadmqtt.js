@@ -49,17 +49,10 @@ function onConnectionLost(responseObject) {
 }
 
 var destination = message.destinationName;
-var dtemp = destination = "mebaris01/nurusallam/suhu";
-var dhumid = destination = "mebaris01/nurusallam/lembap";
-
-var temp = function dtemp(message) {
-  console.log(+message.payloadString+"°");
-  }
-
-var humid = function dhumid(message) {
-  console.log(+message.payloadString+"%");
-  }
+var temp = destination = "mebaris01/nurusallam/suhu";
+var humid = destination = "mebaris01/nurusallam/lembap";
 
 function onMessageArrived(message) {
-  console.log(temp);
+  if(temp){console.log(message.payloadString+"°")};
+  if(humid){console.log(message.payloadString+"%")};
 }
