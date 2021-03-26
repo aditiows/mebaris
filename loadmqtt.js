@@ -53,7 +53,6 @@ function onConnectionLost(responseObject) {
 var destination = message.destinationName;
 var temp = destination = "mebaris01/nurusallam/suhu";
 var humid = destination = "mebaris01/nurusallam/lembap";
-var other = destination = "mebaris01/nurusallam/";
 
 function onMessageArrived(message) {
   if (temp) {console.log(message.payloadString+"°");}
