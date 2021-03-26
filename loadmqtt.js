@@ -61,6 +61,5 @@ var humid = function dhumid(message) {
   }
 
 function onMessageArrived(message) {
-  if(temp){console.log("Ada pesan suhu masuk");}
-  if(humid){console.log("Ada pesan kelembapan masuk");}
+  console.log(temp);
 }
