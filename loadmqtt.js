@@ -48,7 +48,7 @@ function onConnectionLost(responseObject) {
   }
 }
 
-var message.destinationName = destination;
+var destination = message.destinationName;
 var dtemp = destination = "mebaris01/nurusallam/suhu";
 var dhumid = destination = "mebaris01/nurusallam/lembap";
 
