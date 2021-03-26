@@ -21,11 +21,11 @@ function onConnect() {
   console.log("Temperature monitored");
   //client.send(message);
   client.subscribe("mebaris01/nurusallam/lembap");
-  message = new Paho.MQTT.Message("jos");
-  message.destinationName = "mebaris01/nurusallam";
+  //message = new Paho.MQTT.Message("jos");
+  //message.destinationName = "mebaris01/nurusallam";
   console.log("Humidity monitored");
-  client.send(message);
-  console.log("Pesan berhasil terkirim");
+  //client.send(message);
+  //console.log("Pesan berhasil terkirim");
   //console.log(client.getTraceLog());
 
   //client.getTraceLog().forEach(function(line){
@@ -51,15 +51,15 @@ function onConnectionLost(responseObject) {
 var dtemp = destination = "mebaris01/nurusallam/suhu";
 var dhumid = destination = "mebaris01/nurusallam/lembap";
 
-var temp function dtemp(message) {
+var temp = function dtemp(message) {
   console.log(+message.payloadString+"°");
   }
 
-var humid function dhumid(message) {
+var humid = function dhumid(message) {
   console.log(+message.payloadString+"%");
   }
 
 function onMessageArrived(message) {
   if(temp){console.log("Ada pesan suhu masuk");}
-  if else(humid){console.log("Ada pesan kelembapan masuk");}
+  if(humid){console.log("Ada pesan kelembapan masuk");}
 }
