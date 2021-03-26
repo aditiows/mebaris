@@ -47,10 +47,6 @@ function onConnectionLost(responseObject) {
   }
 }
 
-function onMessageArrived(message) {
-  console.log("Ada pesan masuk");
-}
-
 var temp = function onMessageArrived(message) {message.destinationName = "mebaris01/nurusallam/suhu"};
 var humid = function onMessageArrived(message) {message.destinationName = "mebaris01/nurusallam/lembap"};
 
@@ -61,3 +57,8 @@ function temp(message) {
 function humid(message) {
   console.log(+message.payloadString+"%");
   }
+
+function onMessageArrived(message) {
+  if(temp){console.log("Ada pesan suhu masuk");}
+  if(humid){console.log("Ada pesan kelembapan masuk");}
+}
