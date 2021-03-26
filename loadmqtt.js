@@ -56,5 +56,5 @@ var other = destination = "mebaris01/nurusallam/";
 function onMessageArrived(message) {
   if (temp) {console.log(message.payloadString+"°");}
   else if (humid) {console.log(message.payloadString+"%");}
-  else {console.log("Other Topic "+message.payloadString);}
+  else (other) {console.log("Other Topic "+message.payloadString);}
 }
