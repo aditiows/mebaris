@@ -46,3 +46,13 @@ function onConnectionLost(responseObject) {
     console.log("onConnectionLost:"+responseObject.errorMessage);
   }
 }
+
+var humid funtion onMessageArrived(message)	{
+(message.destinationName = "mebaris01/nurusallam/lembap") 
+{ console.log("kelembapan:"+message.payloadString+"%")}
+		}
+		
+var temp function onMessageArrived(message) {
+(message.destinationName = "mebaris01/nurusallam/suhu")
+{ console.log("kelembapan:"+message.payloadString+"°"); }
+    }
