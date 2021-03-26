@@ -4,7 +4,6 @@ client.startTrace();
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
-message = new Paho.MQTT.Message("");
 
 // connect the client
 client.reconnect = true;
