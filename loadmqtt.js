@@ -50,10 +50,10 @@ function onConnectionLost(responseObject) {
 var temp = function onMessageArrived(message) {message.destinationName = "mebaris01/nurusallam/suhu"};
 var humid = function onMessageArrived(message) {message.destinationName = "mebaris01/nurusallam/lembap"};
 
-function temp {
+function temp(message) {
   console.log("suhu:"+message.payloadString+"°");
   }
 
-function humid {
+function humid(message) {
   console.log("kelembapan:"+message.payloadString+"%");
   }
