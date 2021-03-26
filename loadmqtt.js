@@ -15,16 +15,16 @@ function onConnect() {
   // Once a connection has been made, make a subscription and send a message.
   console.log("Koneksi Berhasil");
   client.subscribe("mebaris01/nurusallam/suhu");
-  message = new Paho.MQTT.Message("33");
-  message.destinationName = "mebaris01/nurusallam/suhu";
+  //message = new Paho.MQTT.Message("33");
+  //message.destinationName = "mebaris01/nurusallam/suhu";
   console.log("Temperature monitored");
-  client.send(message);
+  //client.send(message);
   client.subscribe("mebaris01/nurusallam/lembap");
-  message = new Paho.MQTT.Message("77");
-  message.destinationName = "mebaris01/nurusallam/lembap";
+  //message = new Paho.MQTT.Message("77");
+  //message.destinationName = "mebaris01/nurusallam/lembap";
   console.log("Humidity monitored");
-  client.send(message);
-  console.log("Pesan berhasil terkirim");
+  //client.send(message);
+  //console.log("Pesan berhasil terkirim");
   //console.log(client.getTraceLog());
 
   //client.getTraceLog().forEach(function(line){
