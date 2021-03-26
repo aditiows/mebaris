@@ -56,11 +56,11 @@ var temp = "";
 var humid = "";
 
 function onMessageArrived(message) {
-  //console.log(message.destinationName + message.payloadString)
-  if (destination == "mebaris01/nurusallam/suhu") {
-  var temp = console.log(message.payloadString+"°");
+  console.log(message.destinationName+" "+message.payloadString)
+  if (message.destinationName == "mebaris01/nurusallam/suhu") {
+  var temp = document.getElementById("suhu").innerHTML(message.payloadString+"°");
   }
-  if (destination == "mebaris01/nurusallam/lembap") {
-  var humid = console.log(message.payloadString+"%");
+  if (message.destinationName == "mebaris01/nurusallam/lembap") {
+  var humid = document.getElementById("suhu").innerHTML(message.payloadString+"%");
   }
 }
