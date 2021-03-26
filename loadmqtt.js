@@ -52,5 +52,6 @@ var humid = ""
 function onMessageArrived(message)	{
 if(message.destinationName = "mebaris01/nurusallam/lembap") { var humid =("kelembapan:"+message.payloadString+"%")}
 if(message.destinationName = "mebaris01/nurusallam/suhu") { var temp = ("suhu:"+message.payloadString+"°"); }
-console.log(temp + humid)
+console.log(temp)
+console.log(humid)
 }
