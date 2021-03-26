@@ -17,12 +17,12 @@ function onConnect() {
   client.subscribe("mebaris01/nurusallam/suhu");
   message = new Paho.MQTT.Message("33");
   message.destinationName = "mebaris01/nurusallam/suhu";
-  console.log("Suhu Monitor");
+  console.log("Temperature monitored");
   client.send(message);
   client.subscribe("mebaris01/nurusallam/lembap");
   message = new Paho.MQTT.Message("77");
   message.destinationName = "mebaris01/nurusallam/lembap";
-  console.log("Kelembapan Monitor");
+  console.log("Humidity monitored");
   client.send(message);
   console.log("Pesan berhasil terkirim");
   //console.log(client.getTraceLog());
@@ -51,6 +51,6 @@ var temp = ""
 var humid = ""
 function onMessageArrived(message)	{
 if(message.destinationName = "mebaris01/nurusallam/lembap") { var humid =("kelembapan:"+message.payloadString+"%")}
-else if(message.destinationName = "mebaris01/nurusallam/suhu") { var temp = ("suhu:"+message.payloadString+"°"); }
-console.log(temp + humid)
+if(message.destinationName = "mebaris01/nurusallam/suhu") { var temp = ("suhu:"+message.payloadString+"°"); }
+console.log(temp" dan "humid)
 }
