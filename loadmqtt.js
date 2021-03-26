@@ -47,7 +47,7 @@ function onConnectionLost(responseObject) {
   }
 }
 
-var humid funtion onMessageArrived(message)	{
+var humid function onMessageArrived(message)	{
 (message.destinationName = "mebaris01/nurusallam/lembap") 
 { console.log("kelembapan:"+message.payloadString+"%")}
 		}
