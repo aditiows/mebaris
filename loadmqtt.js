@@ -47,9 +47,13 @@ function onConnectionLost(responseObject) {
   }
 }
 
-var temp = ("suhu:"+message.payloadString+"°");
-var humid = ("kelembapan:"+message.payloadString+"%");
-function onMessageArrived(message)	{
-(if(message.destinationName = "mebaris01/nurusallam/lembap") { console.log(humid));}
-(else if(message.destinationName = "mebaris01/nurusallam/suhu") { console.log(temp));}
-}
+temp = onMessageArrived(message) {if(message.destinationName = "mebaris01/nurusallam/lembap")};
+humid = onMessageArrived(message) {if(message.destinationName = "mebaris01/nurusallam/lembap")};
+
+funtion temp {
+  console.log("suhu:"+message.payloadString+"°");
+  }
+
+funtion humid {
+  console.log("kelembapan:"+message.payloadString+"%");
+  }
