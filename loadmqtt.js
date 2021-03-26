@@ -24,6 +24,8 @@ function onConnect() {
   //message = new Paho.MQTT.Message("jos");
   //message.destinationName = "mebaris01/nurusallam";
   console.log("Humidity monitored");
+  client.subscribe("mebaris01/nurusallam/");
+  console.log("Nurusallam Online");
   //client.send(message);
   //console.log("Pesan berhasil terkirim");
   //console.log(client.getTraceLog());
