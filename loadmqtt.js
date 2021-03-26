@@ -7,6 +7,7 @@ client.onMessageArrived = onMessageArrived;
 message = new Paho.MQTT.Message("");
 
 // connect the client
+client.reconnect = true;
 client.connect({onSuccess:onConnect,
                 useSSL: true});
 console.log("mencoba untuk terkoneksi...");
@@ -53,7 +54,11 @@ function onConnectionLost(responseObject) {
 var destination = message.destinationName;
 
 function onMessageArrived(message) {
-  if (destination = "mebaris01/nurusallam/suhu") {console.log(message.payloadString+"°");}
-  else if (destination = "mebaris01/nurusallam/lembap") {console.log(message.payloadString+"%");}
-  else {console.log("Other Topic "+message.payloadString);}
+  console.log(message.destinationName + message.payloadString)
+  if (destination == "mebaris01/nurusallam/suhu") {
+  var temp = console.log(message.payloadString+"°");
+  }
+  if (destination = "mebaris01/nurusallam/lembap") {
+  var humid = console.log(message.payloadString+"%");
+  }
 }
