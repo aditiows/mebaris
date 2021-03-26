@@ -52,9 +52,11 @@ function onConnectionLost(responseObject) {
 }
 
 var destination = message.destinationName;
+var temp = "";
+var humid = "";
 
 function onMessageArrived(message) {
-  console.log(message.destinationName + message.payloadString)
+  //console.log(message.destinationName + message.payloadString)
   if (destination == "mebaris01/nurusallam/suhu") {
   var temp = console.log(message.payloadString+"°");
   }
