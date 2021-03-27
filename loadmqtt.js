@@ -56,5 +56,3 @@ function onMessageArrived(message) {
     return;
       }
     }
-
-var data = JSON.parse(onMessageArrived);
