@@ -55,3 +55,5 @@ function onMessageArrived(message) {
   console.log(message.destinationName+" "+message.payloadString);
   }
 }
+
+var obj = JSON.parse(message.payloadString);
