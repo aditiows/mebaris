@@ -50,13 +50,9 @@ function onConnectionLost(responseObject) {
   }
 }
 
-function onMessageArrived(message) {
-  console.log(message.destinationName+" "+message.payloadString);
-  if (message.destinationName = "mebaris01/nurusallam") {
-  var data = JSON.parse(message.payloadString);
-  $("#suhu").html(data.suhu+"°");
-  $("#lembap").html(data.lembap+"%");
-  }
-}
-
-
+var data = function onMessageArrived(message) {
+            if (message.destinationName = "mebaris01/nurusallam") {
+            JSON.parse(""+message.payloadString);
+            return;
+              }
+            }
