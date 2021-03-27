@@ -21,11 +21,11 @@ function onConnect() {
   //console.log("Temperature monitored");
   //client.send(message);
   //client.subscribe("mebaris01/nurusallam/lembap");
-  message = new Paho.MQTT.Message({"suhu":34, "lembap":70});
+  message = new Paho.MQTT.Message("{"suhu":34, "lembap":70}");
   message.destinationName = "mebaris01/nurusallam";
   //console.log("Humidity monitored");
   //client.subscribe("mebaris01/nurusallam/");
-  console.log("Nurusallam Online");
+  console.log("Nurusallam is Online");
   client.send(message);
   //console.log("Pesan berhasil terkirim");
   //console.log(client.getTraceLog());
@@ -51,9 +51,12 @@ function onConnectionLost(responseObject) {
 }
 
 function onMessageArrived(message) {
-  if (message.destinationName = "mebaris01/nurusallam") {
   console.log(message.destinationName+" "+message.payloadString);
+  if (message.destinationName = "mebaris01/nurusallam") {
+  var data = JSON.parse(message.payloadString);
+  $("#suhu").html(data.suhu+"°");
+  $("#lembap").html(data.lembap+"%");
   }
 }
 
-var obj = JSON.parse("message.payloadString");
+
