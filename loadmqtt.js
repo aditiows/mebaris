@@ -4,7 +4,6 @@ client.startTrace();
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
-message = new Paho.MQTT.Message();
 
 // connect the client
 client.reconnect = true;
@@ -40,7 +39,7 @@ function onConnect() {
   //client.publish("mebaris01/nurusallam/suhu", "Hello from a better publish call!", 1, false)
 
   //topicMessage = new Paho.MQTT.Message("This is a message where the topic is set by setTopic");
- // topicMessage.topic = "mebaris01/nurusallam/suhu";
+  // topicMessage.topic = "mebaris01/nurusallam/suhu";
   //client.publish(topicMessage)
 }
 
