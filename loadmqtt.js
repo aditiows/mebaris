@@ -56,4 +56,4 @@ function onMessageArrived(message) {
   }
 }
 
-var obj = JSON.parse(message.payloadString);
+var obj = JSON.parse("message.payloadString");
