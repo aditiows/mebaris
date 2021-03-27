@@ -28,7 +28,7 @@ function onConnect() {
   console.log("Nurusallam is Online");
   client.send(message);
   //console.log("Pesan berhasil terkirim");
-  //console.log(client.getTraceLog());
+  console.log(client.getTraceLog());
 
   //client.getTraceLog().forEach(function(line){
   //console.log('Trace: ' + line)
