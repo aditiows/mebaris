@@ -21,7 +21,7 @@ function onConnect() {
   //console.log("Temperature monitored");
   //client.send(message);
   //client.subscribe("mebaris01/nurusallam/lembap");
-  message = new Paho.MQTT.Message("{"suhu":34, "lembap":70}");
+  message = new Paho.MQTT.Message({"suhu":34, "lembap":70});
   message.destinationName = "mebaris01/nurusallam";
   //console.log("Humidity monitored");
   //client.subscribe("mebaris01/nurusallam/");
