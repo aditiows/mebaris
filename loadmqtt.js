@@ -46,7 +46,7 @@ function onConnect() {
 // called when the client loses its connection
 function onConnectionLost(responseObject) {
   if (responseObject.errorCode !== 0) {
-    console.log("onConnectionLost:"+responseObject.errorMessage);
+    console.log("Koneksi Terputus:"+responseObject.errorMessage);
   }
 }
 
