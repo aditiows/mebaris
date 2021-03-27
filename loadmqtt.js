@@ -50,9 +50,11 @@ function onConnectionLost(responseObject) {
   }
 }
 
-var data = function onMessageArrived(message) {
-            if (message.destinationName = "mebaris01/nurusallam") {
-            JSON.parse(""+message.payloadString);
-            return;
-              }
-            }
+function onMessageArrived(message) {
+    if (message.destinationName = "mebaris01/nurusallam") {
+    console.log(message.destinationName+""+message.payloadString);
+    return;
+      }
+    }
+
+var data = JSON.parse(onMessageArrived);
