@@ -52,7 +52,7 @@ function onConnectionLost(responseObject) {
 
 function onMessageArrived(message) {
     if (message.destinationName = "mebaris01/nurusallam") {
-    console.log(message.destinationName+""+message.payloadString);
+    console.log(message.destinationName+" "+message.payloadString);
     return;
       }
     }
