@@ -60,9 +60,11 @@ function onMessageArrived(message) {
 function myTemp() {
     var data = JSON.parse(message.payloadString);
     document.getElementById("suhu").innerHTML = (data.suhu+"°");
+    consol.log(data.suhu+"°");
     }
 
 function myHumid() {
     var data = JSON.parse(message.payloadString);
     document.getElementById("lembap").innerHTML = (data.lembap+"%");
+    console.log(data.lembap+"%");
     }
