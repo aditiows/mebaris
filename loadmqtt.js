@@ -15,7 +15,8 @@ console.log("mencoba untuk terkoneksi...");
 function onConnect() {
   // Jika koneksi berhasil, langsung respon
   console.log("Koneksi Berhasil");
-  client.subscribe("mebaris01/nurusallam");
+   client.subscribe("mebaris_M234jkjDS4Jk23j");
+  client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam");
   message = new Paho.MQTT.Message("Nurusallam is Online");
   message.destinationName = "mebaris_M234jkjDS4Jk23j";
   client.send(message);
