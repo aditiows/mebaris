@@ -17,7 +17,7 @@ function onConnect() {
   console.log("Koneksi Berhasil");
   client.subscribe("mebaris01/nurusallam", 1, true);
   message = new Paho.MQTT.Message("Nurusallam is Online");
-  message.destinationName = "mebaris_M234jkjDS4Jk23j/";
+  message.destinationName = "mebaris_M234jkjDS4Jk23j";
   client.send(message);
   console.log(""+message.payloadString);
   console.log(client.getTraceLog());
@@ -43,15 +43,6 @@ function onConnectionLost(responseObject) {
 }
 
 // bila ada pesan masuk
-function onMessageArrived(message) {
-    if (message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
-    myTemp();
-    myHumid();  
-      }
-    if (message.destinationName = "mebaris_M234jkjDS4Jk23j") {
-    console.log(message.destinationName+" "+message.payloadString);
-      }
-    }
 
 function myTemp() {
     var data = JSON.parse(message.payloadString);
@@ -63,4 +54,14 @@ function myHumid() {
     var data = JSON.parse(message.payloadString);
     document.getElementById("lembap").innerHTML = (data.lembap+"%");
     console.log(data.lembap+"%");
+    }
+
+function onMessageArrived(message) {
+    if (message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+    myTemp();
+    myHumid();  
+      }
+    if (message.destinationName = "mebaris_M234jkjDS4Jk23j") {
+    console.log(message.destinationName+" "+message.payloadString);
+      }
     }
