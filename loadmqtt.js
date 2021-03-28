@@ -53,7 +53,6 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(message) {
     if (message.destinationName = "mebaris01/nurusallam") {
     var data = JSON.parse(message.payloadString);
-    console.log(data.lembap+"% dan "+data.suhu+"°");
-    return;
+    document.getElementById("lembap").innerHTML = (data.suhu+"°");
       }
     }
