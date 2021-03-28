@@ -43,19 +43,6 @@ function onConnectionLost(responseObject) {
 }
 
 // bila ada pesan masuk
-
-function myTemp() {
-    var data = JSON.parse(message.payloadString);
-    document.getElementById("suhu").innerHTML = (data.suhu+"°");
-    console.log(data.suhu+"°");
-    }
-
-function myHumid() {
-    var data = JSON.parse(message.payloadString);
-    document.getElementById("lembap").innerHTML = (data.lembap+"%");
-    console.log(data.lembap+"%");
-    }
-
 function onMessageArrived(message) {
     if (message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
     myTemp();
