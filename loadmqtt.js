@@ -4,6 +4,7 @@ client.startTrace();
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
+client.myHumid = myHumid;
 
 // connect the client
 client.reconnect = true;
