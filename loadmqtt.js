@@ -15,10 +15,9 @@ console.log("mencoba untuk terkoneksi...");
 function onConnect() {
   // Jika koneksi berhasil, langsung respon
   console.log("Koneksi Berhasil");
-  client.subscribe("mebaris01/nurusallam",qos: 1);
+  client.subscribe("mebaris01/nurusallam", 1, true);
   message = new Paho.MQTT.Message("Nurusallam is Online");
   message.destinationName = "mebaris_M234jkjDS4Jk23j/";
-  message.retained = true;
   client.send(message);
   console.log(""+message.payloadString);
   console.log(client.getTraceLog());
@@ -46,6 +45,7 @@ function onConnectionLost(responseObject) {
 // bila ada pesan masuk
 function onMessageArrived(message) {
     if (message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+    console.log(message.destinationName+" "+message.payloadString)
     myTemp();
     myHumid();  
       }
@@ -54,7 +54,7 @@ function onMessageArrived(message) {
 function myTemp() {
     var data = JSON.parse(message.payloadString);
     document.getElementById("suhu").innerHTML = (data.suhu+"°");
-    consol.log(data.suhu+"°");
+    console.log(data.suhu+"°");
     }
 
 function myHumid() {
