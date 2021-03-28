@@ -53,7 +53,8 @@ function onConnectionLost(responseObject) {
 
 function onMessageArrived(message) {
     if (message.destinationName = "mebaris01/nurusallam") {
-    console.log(message.destinationName+" "+message.payloadString);
+    var data = JSON.parse(message.payloadString);
+    console.log(data.lembap+ "%");
     return;
       }
     }
@@ -62,5 +63,7 @@ function myHumid(message) {
     if (message.destinationName = "mebaris01/nurusallam")  {
       var data = JSON.parse(message.payloadString);
       console.log(data.lembap+ "%");
+      console.log(data.suhu+ "°");
+      return;
       }
     }
