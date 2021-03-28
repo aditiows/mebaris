@@ -19,7 +19,6 @@ function onConnect() {
   message = new Paho.MQTT.Message("Nurusallam is Online");
   message.destinationName = "mebaris_M234jkjDS4Jk23j";
   client.send(message);
-  console.log("Pesan Masuk: "+message.payloadString);
   console.log(client.getTraceLog());
 
   //client.getTraceLog().forEach(function(line){
