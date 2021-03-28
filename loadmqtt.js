@@ -13,21 +13,14 @@ console.log("mencoba untuk terkoneksi...");
 
 // called when the client connects
 function onConnect() {
-  // Once a connection has been made, make a subscription and send a message.
+  // Jika koneksi berhasil, langsung respon
   console.log("Koneksi Berhasil");
-  client.subscribe("mebaris01/nurusallam");
-  //message = new Paho.MQTT.Message("33");
-  //message.destinationName = "mebaris01/nurusallam/suhu";
-  //console.log("Temperature monitored");
-  //client.send(message);
-  //client.subscribe("mebaris01/nurusallam/lembap");
-  message = new Paho.MQTT.Message('{"suhu":34, "lembap":70}');
-  message.destinationName = "mebaris01/nurusallam";
-  //console.log("Humidity monitored");
-  //client.subscribe("mebaris01/nurusallam/");
-  console.log("Nurusallam is Online");
+  client.subscribe("mebaris01/nurusallam",qos: 1);
+  message = new Paho.MQTT.Message("Nurusallam is Online");
+  message.destinationName = "mebaris_M234jkjDS4Jk23j/";
+  message.retained = true;
   client.send(message);
-  //console.log("Pesan berhasil terkirim");
+  console.log(""+message.payloadString);
   console.log(client.getTraceLog());
 
   //client.getTraceLog().forEach(function(line){
@@ -43,15 +36,16 @@ function onConnect() {
   //client.publish(topicMessage)
 }
 
-// called when the client loses its connection
+// bila koneksi terputus
 function onConnectionLost(responseObject) {
   if (responseObject.errorCode !== 0) {
-    console.log("Koneksi Terputus:"+responseObject.errorMessage);
+    console.log("Koneksi Terputus: "+responseObject.errorMessage);
   }
 }
 
+// bila ada pesan masuk
 function onMessageArrived(message) {
-    if (message.destinationName = "mebaris01/nurusallam") {
+    if (message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
     myTemp();
     myHumid();  
       }
