@@ -62,8 +62,7 @@ function onMessageArrived(message) {
 function myHumid(message) {
     if (message.destinationName = "mebaris01/nurusallam")  {
       var data = JSON.parse(message.payloadString);
-      console.log(data.lembap+ "%");
-      console.log(data.suhu+ "°");
+      console.log(data.lembap+"% dan "+data.suhu+"°");
       return;
       }
     }
