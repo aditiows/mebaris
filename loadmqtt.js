@@ -17,11 +17,10 @@ function onConnect() {
   console.log("Koneksi Berhasil");
   client.subscribe("mebaris_M234jkjDS4Jk23j");
   client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam");
-  message = new Paho.MQTT.Message("Nurusallam is Online");
+  message = new Paho.MQTT.Message('Nurusallam is Online');
   message.destinationName = "mebaris_M234jkjDS4Jk23j";
   client.send(message);
   console.log(client.getTraceLog());
-
   //client.getTraceLog().forEach(function(line){
   //console.log('Trace: ' + line)
   //});
@@ -59,6 +58,7 @@ function myTemp() {
 
 function myHumid() {
     var data = JSON.parse(""+message.payloadString);
-    document.getElementById("lembap").innerHTML = (data.lembap+"%");
+    var dataHumid = document.getElementById("suhu");
+    dataHumid.innerHTML = (data.lembap+"%");
     console.log(data.lembap+"%");
     }
