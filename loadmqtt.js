@@ -15,8 +15,8 @@ console.log("mencoba untuk terkoneksi...");
 function onConnect() {
   // Jika koneksi berhasil, langsung respon
   console.log("Koneksi Berhasil");
-  client.subscribe("mebaris_M234jkjDS4Jk23j");
-  client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam");
+  client.subscribe("mebaris_M234jkjDS4Jk23j", 1, false);
+  client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam", 1, false);
   message = new Paho.MQTT.Message('{"suhu":30, "lembap":70}');
   message.destinationName = "mebaris_M234jkjDS4Jk23j";
   client.send(message);
