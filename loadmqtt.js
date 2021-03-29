@@ -48,9 +48,6 @@ function onMessageArrived(message) {
     myTemp();
     myHumid();
       }
-    if(message.destinationName = "mebaris_M234jkjDS4Jk23j") {
-    console.log(message.destinationName+" "+message.payloadString);
-      }
     }
 
 function myTemp() {
