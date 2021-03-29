@@ -46,7 +46,6 @@ function onMessageArrived(message) {
     console.log(message.payloadString);
     myTemp();
     }
-}
 
 function myTemp() {
     if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
