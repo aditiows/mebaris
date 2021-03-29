@@ -55,7 +55,9 @@ function onMessageArrived(message) {
 
 function myTemp() {
     var data = JSON.parse(message.payloadString);
-    document.getElementById("suhu").innerHTML = (data.suhu+"°");
+    let dataTemp = document.getElementById("suhu");
+    dataTemp.innerHTML = (data.suhu+"°");
+    console.log(data.suhu+"°");
     }
 
 function myHumid() {
