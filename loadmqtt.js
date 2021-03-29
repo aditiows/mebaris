@@ -44,6 +44,15 @@ function onConnectionLost(responseObject) {
 // bila ada pesan masuk
 function onMessageArrived(message) {
     if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
-      console.log(""+message.payloadString);
+    console.log(""+message.payloadString);
+    myTemp();
     }
 }
+
+function myTemp() {
+    var data = JSON.parse(""+message.payloadString);
+    let dataTemp = document.getElementById("suhu");
+    dataTemp.innerHTML = (data.suhu+"°");
+    console.log(data.suhu+"°");
+    }
+
