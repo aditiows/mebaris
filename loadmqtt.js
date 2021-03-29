@@ -54,14 +54,14 @@ function onMessageArrived(message) {
     }
 
 function myTemp() {
-    var data = JSON.parse(message.payloadString);
+    var data = JSON.parse(""+message.payloadString);
     let dataTemp = document.getElementById("suhu");
     dataTemp.innerHTML = (data.suhu+"°");
     console.log(data.suhu+"°");
     }
 
 function myHumid() {
-    var data = JSON.parse(message.payloadString);
+    var data = JSON.parse(""+message.payloadString);
     document.getElementById("lembap").innerHTML = (data.lembap+"%");
     console.log(data.lembap+"%");
     }
