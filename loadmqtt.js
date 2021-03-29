@@ -43,7 +43,7 @@ function onConnectionLost(responseObject) {
 
 // bila ada pesan masuk
 function onMessageArrived(message) {
-    console.log(message.payloadString);
+    console.log(message.destinationName+" "+message.payloadString);
     myTemp();
     }
 
