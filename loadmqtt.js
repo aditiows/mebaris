@@ -57,7 +57,7 @@ function myTemp() {
     var myData = JSON.parse(mpls);
     var dataTemp = document.getElementById("suhu");
     dataTemp.innerHTML = (myData.suhu+"°");
-    console.log(myData.suhu+"°");
+    console.log(message.destinationName+" "+myData.suhu+"°");
     }
 }
 
