@@ -46,26 +46,26 @@ function onConnectionLost(responseObject) {
 // bila ada pesan masuk
 function onMessageArrived(message) {
     if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
-    myTemp();
-    myHumid();
+    tempe();
+    hum();
     }
     else if(message.destinationName = "mebaris_M234jkjDS4Jk23j") {
     console.log(message.destinationName+" "+message.payloadString);
     }
 }
   
-function myTemp() {
-    var mpls = message.payloadString;
-    var myData = JSON.parse(mpls);
-    var dataTemp = document.getElementById("suhu");
-    dataTemp.innerHTML = (myData.suhu+"°");
-    console.log(message.destinationName+" "+myData.suhu+"°");
-    }
+var tempe = function myTemp() {
+              var mpls = message.payloadString;
+              var myData = JSON.parse(mpls);
+              var dataTemp = document.getElementById("suhu");
+              dataTemp.innerHTML = (myData.suhu+"°");
+              console.log(message.destinationName+" "+myData.suhu+"°");
+              }
 
-function myHumid() {
-    var mpls = message.payloadString;
-    var myData = JSON.parse(mpls);
-    var dataHum = document.getElementById("lembap");
-    dataHum.innerHTML = (myData.lembap+"%");
-    console.log(message.destinationName+" "+myData.lembap+"%");
-    }
+var hum = function myHumid() {
+             var mpls = message.payloadString;
+             var myData = JSON.parse(mpls);
+             var dataHum = document.getElementById("lembap");
+             dataHum.innerHTML = (myData.lembap+"%");
+             console.log(message.destinationName+" "+myData.lembap+"%");
+             }
