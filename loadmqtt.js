@@ -15,8 +15,8 @@ console.log("mencoba untuk terkoneksi...");
 function onConnect() {
   // Jika koneksi berhasil, langsung respon
   console.log("Koneksi Berhasil");
-  client.subscribe("mebaris_M234jkjDS4Jk23j", 1, false);
-  client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam", 1, false);
+  client.subscribe("mebaris_M234jkjDS4Jk23j");
+  client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam");
   message = new Paho.MQTT.Message('{"suhu":30, "lembap":70}');
   message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam";
   client.send(message);
@@ -51,12 +51,11 @@ function onMessageArrived(message) {
     }
 }
   
-var mpls = message.payloadString;
-var myData = JSON.parse(mpls);
-var dataTemp = document.getElementById("suhu");
-
 function myTemp() {
     if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+    var mpls = message.payloadString;
+    var myData = JSON.parse(mpls);
+    var dataTemp = document.getElementById("suhu");
     dataTemp.innerHTML = (myData.suhu+"°");
     console.log(myData.suhu+"°");
     }
