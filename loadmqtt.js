@@ -44,6 +44,7 @@ function onConnectionLost(responseObject) {
 
 // bila ada pesan masuk
 function onMessageArrived(message) {
+    var message = new Paho.MQTT.Message;
     if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
     myTemp();
     myHumid();
@@ -54,6 +55,7 @@ function onMessageArrived(message) {
 }
   
 function myTemp() {
+  var message = new Paho.MQTT.Message;
   var mpls = message.payloadString;
   var myData = JSON.parse(mpls);
   var dataTemp = document.getElementById("suhu");
@@ -62,6 +64,7 @@ function myTemp() {
   }
 
 function myHumid() {
+  var message = new Paho.MQTT.Message;
   var mpls = message.payloadString;
   var myData = JSON.parse(mpls);
   var dataHum = document.getElementById("lembap");
