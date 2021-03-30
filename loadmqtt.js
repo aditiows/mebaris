@@ -45,6 +45,7 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(message) {
     if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
     myTemp();
+    myHumid();
     }
     else if(message.destinationName = "mebaris_M234jkjDS4Jk23j") {
     console.log(message.destinationName+" "+message.payloadString);
@@ -61,3 +62,12 @@ function myTemp() {
     }
 }
 
+function myHumid() {
+    if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+    var mpls = message.payloadString;
+    var myData = JSON.parse(mpls);
+    var dataHum = document.getElementById("lembap");
+    dataHum.innerHTML = (myData.lembap+"%");
+    console.log(message.destinationName+" "+myData.lembap+"%");
+    }
+}
