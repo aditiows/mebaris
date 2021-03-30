@@ -17,8 +17,8 @@ function onConnect() {
   console.log("Koneksi Berhasil");
   client.subscribe("mebaris_M234jkjDS4Jk23j");
   client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam");
-  message = new Paho.MQTT.Message('{"suhu":40, "lembap":80}');
-  message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam";
+  //message = new Paho.MQTT.Message('{"suhu":40, "lembap":80}');
+  //message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam";
   //message.qos = 1;
   //client.send(message);
   console.log(client.getTraceLog());
@@ -43,18 +43,18 @@ function onConnectionLost(responseObject) {
 }
 
 // bila ada pesan masuk
-function onMessageArrived(msg) {
+function onMessageArrived(message) {
     if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
     myTemp();
     myHumid();
     }
     else if(message.destinationName = "mebaris_M234jkjDS4Jk23j") {
-    console.log(message.destinationName+" "+msg.payloadString);
+    console.log(message.destinationName+" "+message.payloadString);
     }
 }
   
 function myTemp() {
-  var mpls = msg.payloadString;
+  var mpls = message.payloadString;
   var myData = JSON.parse(mpls);
   var dataTemp = document.getElementById("suhu");
   dataTemp.innerHTML = (myData.suhu+"°");
@@ -62,7 +62,7 @@ function myTemp() {
   }
 
 function myHumid() {
-  var mpls = msg.payloadString;
+  var mpls = message.payloadString;
   var myData = JSON.parse(mpls);
   var dataHum = document.getElementById("lembap");
   dataHum.innerHTML = (myData.lembap+"%");
