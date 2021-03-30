@@ -10,7 +10,7 @@ client.reconnect = true;
 client.connect({onSuccess:onConnect,
                 useSSL: true});
 console.log("mencoba untuk terkoneksi...");
-message = new Paho.MQTT.Message();
+var message = new Paho.MQTT.Message();
 
 // called when the client connects
 function onConnect() {
