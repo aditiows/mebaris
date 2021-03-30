@@ -10,6 +10,7 @@ client.reconnect = true;
 client.connect({onSuccess:onConnect,
                 useSSL: true});
 console.log("mencoba untuk terkoneksi...");
+message = new Paho.MQTT.Message();
 
 // called when the client connects
 function onConnect() {
@@ -17,9 +18,9 @@ function onConnect() {
   console.log("Koneksi Berhasil");
   client.subscribe("mebaris_M234jkjDS4Jk23j");
   client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam");
-  message = new Paho.MQTT.Message('{"suhu":40, "lembap":80}');
+  //message = new Paho.MQTT.Message('{"suhu":40, "lembap":80}');
   message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam";
-  message.qos = 1;
+  //message.qos = 1;
   //client.send(message);
   console.log(client.getTraceLog());
   //client.getTraceLog().forEach(function(line){
