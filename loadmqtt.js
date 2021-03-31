@@ -51,6 +51,11 @@ function onMessageArrived(msg) {
     }
 }
 
+var mpls = message.payloadString;
+var myData = JSON.parse(mpls);
+var dataHum = document.getElementById("lembap");
+var dataTemp = document.getElementById("suhu");
+
 function myHumid() {
 	if (onMessageArrived = true) {
     console.log(myData.lembap+"%");
