@@ -61,8 +61,8 @@ function myTemp() {
 
 // bila ada pesan masuk
 function onMessageArrived(msg) {
-    	myHumid;
-	myTemp;
-	console.log(msg.payloadString)
+    	myHumid();
+	myTemp();
+	console.log(msg.payloadString);
 	return;
 }
