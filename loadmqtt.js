@@ -64,5 +64,4 @@ function onMessageArrived(msg) {
     	myHumid();
 	myTemp();
 	console.log(msg.payloadString);
-	return;
 }
