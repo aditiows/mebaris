@@ -54,7 +54,7 @@ function onMessageArrived(msg) {
 //pengantar untuk display ke web
 function myTemp() {
 	onMessageArrived;
-    var mpls = message.payloadString;
+    var mpls = msg.payloadString;
     var myData = JSON.parse(mpls);
     var dataTemp = document.getElementById("suhu");
     dataTemp.innerHTML = (myData.suhu+"°");
