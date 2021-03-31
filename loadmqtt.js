@@ -17,10 +17,9 @@ function onConnect() {
   console.log("Koneksi Berhasil");
   client.subscribe("mebaris_M234jkjDS4Jk23j");
   client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam");
-  //message = new Paho.MQTT.Message('{"suhu":40, "lembap":80}');
-  //message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam";
-  //message.qos = 1;
-  //client.send(message);
+  //message = new Paho.MQTT.Message('{"suhu":30, "lembap":70}');
+  message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam";
+  client.send(message);
   console.log(client.getTraceLog());
   //client.getTraceLog().forEach(function(line){
   //console.log('Trace: ' + line)
@@ -31,7 +30,7 @@ function onConnect() {
   //client.publish("mebaris01/nurusallam/suhu", "Hello from a better publish call!", 1, false)
 
   //topicMessage = new Paho.MQTT.Message("This is a message where the topic is set by setTopic");
-  // topicMessage.topic = "mebaris01/nurusallam/suhu";
+  //topicMessage.topic = "mebaris01/nurusallam/suhu";
   //client.publish(topicMessage)
 }
 
@@ -43,22 +42,11 @@ function onConnectionLost(responseObject) {
 }
 
 // bila ada pesan masuk
-function onMessageArrived(message) {
+function onMessageArrived(messages) {
     if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
-    var mpls = message.payloadString;
-    var myData = JSON.parse(mpls);
-    var dataTemp = document.getElementById("suhu");
-    var dataHum = document.getElementById("lembap");
-      function myTemp() {
-        dataTemp.innerHTML = (myData.suhu+"°");
-        console.log(message.destinationName+" "+myData.suhu+"°");
-      };
-      function myHumid() {
-        dataHum.innerHTML = (myData.lembap+"%");
-        console.log(message.destinationName+" "+myData.lembap+"%");
-      };
+    console.log(message.payloadString);
     }
-    else if(message.destinationName = "mebaris_M234jkjDS4Jk23j") {
+    if(message.destinationName = "mebaris_M234jkjDS4Jk23j") {
     console.log(message.destinationName+" "+message.payloadString);
     }
 }
