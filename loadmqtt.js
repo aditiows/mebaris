@@ -47,9 +47,7 @@ function myHumid(humid) {
 	let mpls = msg.payloadString;
     	let myData = JSON.parse(mpls);
 	console.log(myData.lembap+"%")
-		};	
-	const humidity = document.getElementByid(humid);
-	return humidity.innerHTML;
+		}
 	}
 
 function myTemp(temp) {
@@ -58,9 +56,7 @@ function myTemp(temp) {
 	let mpls = msg.payloadString;
     	let myData = JSON.parse(mpls);
 	console.log(myData.suhu+"°");
-		};
-	const temperature = document.getElementByid(temp);	
-	return temperature.innerHTML;
+		}
 	}
 
 // bila ada pesan masuk
