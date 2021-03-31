@@ -43,8 +43,8 @@ function onConnectionLost(responseObject) {
 
 // bila ada pesan masuk
 function onMessageArrived(msg) {
-    	myHumid();
-	myTemp();
+    	myHumid;
+	myTemp;
 	return;
 }
 	
