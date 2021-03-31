@@ -43,7 +43,7 @@ function onConnectionLost(responseObject) {
 
 // bila ada pesan masuk
 function onMessageArrived(msg) {
-    if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+    if(message.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
     console.log(msg.payloadString);
     }
     else {
