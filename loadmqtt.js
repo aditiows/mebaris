@@ -45,15 +45,19 @@ function myHumid() {
 	var msg = onMessageArrived;
 	var mpls = msg.payloadString;
     	var myData = JSON.parse(mpls);
-    	console.log(myData.lembap+"%");
-	};
+	if (msg.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+    	console.log(myData.lembap+"%")
+		};
+	}
 
 function myTemp() {
 	var msg = onMessageArrived;
 	var mpls = msg.payloadString;
     	var myData = JSON.parse(mpls);
-    	console.log(myData.suhu+"°");
-	};
+	if (msg.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+    	console.log(myData.suhu+"°")
+		};
+	}
 
 // bila ada pesan masuk
 function onMessageArrived(msg) {
