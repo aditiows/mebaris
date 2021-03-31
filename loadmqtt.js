@@ -41,17 +41,17 @@ function onConnectionLost(responseObject) {
   }
 }
 
-var myHumid = function humid() {
-	var mpls = message.payloadString;
+function myHumid() {
+	var msg = onMessageArrived;
+	var mpls = msg.payloadString;
     	var myData = JSON.parse(mpls);
-   	var dataHum = document.getElementById("lembap");
     	console.log(myData.lembap+"%");
 	};
 
-var myTemp = function temp() {
-	var mpls = message.payloadString;
+function myTemp() {
+	var msg = onMessageArrived;
+	var mpls = msg.payloadString;
     	var myData = JSON.parse(mpls);
-   	var dataTemp = document.getElementById("suhu");
     	console.log(myData.suhu+"°");
 	};
 
@@ -59,5 +59,6 @@ var myTemp = function temp() {
 function onMessageArrived(msg) {
     	myHumid;
 	myTemp;
+	console.log(msg.payloadString)
 	return;
 }
