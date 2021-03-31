@@ -46,11 +46,10 @@ function myHumid(humid) {
 	let msg = onMessageArrived;
 	let mpls = msg.payloadString;
     	let myData = JSON.parse(mpls);
-	};
-	const humid = document.getElementByid(humid);
-	return humid.innerHTML;
-    	console.log(myData.lembap+"%")
-		};
+	console.log(myData.lembap+"%")
+		};	
+	const humidity = document.getElementByid(humid);
+	return humidity.innerHTML;
 	}
 
 function myTemp(temp) {
@@ -58,10 +57,10 @@ function myTemp(temp) {
 	let msg = onMessageArrived;
 	let mpls = msg.payloadString;
     	let myData = JSON.parse(mpls);
-	};
-    	console.log(myData.suhu+"°");
-	const temp = document.getElementByid(temp);	
-	return temp.innerHTML;
+	console.log(myData.suhu+"°");
+		};
+	const temperature = document.getElementByid(temp);	
+	return temperature.innerHTML;
 	}
 
 // bila ada pesan masuk
