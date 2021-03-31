@@ -45,7 +45,7 @@ function myHumid() {
 	var msg = onMessageArrived;
 	var mpls = msg.payloadString;
     	var myData = JSON.parse(mpls);
-	if (msg.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+	if (message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
     	console.log(myData.lembap+"%")
 		};
 	}
@@ -54,7 +54,7 @@ function myTemp() {
 	var msg = onMessageArrived;
 	var mpls = msg.payloadString;
     	var myData = JSON.parse(mpls);
-	if (msg.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+	if (message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
     	console.log(myData.suhu+"°")
 		};
 	}
