@@ -41,23 +41,23 @@ function onConnectionLost(responseObject) {
   }
 }
 
-// bila ada pesan masuk
-function onMessageArrived(msg) {
-    	myHumid;
-	myTemp;
-	return;
-}
-	
 var myHumid = function humid() {
 	var mpls = message.payloadString;
     	var myData = JSON.parse(mpls);
    	var dataHum = document.getElementById("lembap");
     	console.log(myData.lembap+"%");
-	}
+	};
 
 var myTemp = function temp() {
 	var mpls = message.payloadString;
     	var myData = JSON.parse(mpls);
    	var dataTemp = document.getElementById("suhu");
     	console.log(myData.suhu+"°");
-	}
+	};
+
+// bila ada pesan masuk
+function onMessageArrived(msg) {
+    	myHumid;
+	myTemp;
+	return;
+}
