@@ -17,7 +17,7 @@ function onConnect() {
   console.log("Koneksi Berhasil");
   client.subscribe("mebaris_M234jkjDS4Jk23j");
   client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam");
-  //message = new Paho.MQTT.Message('{"suhu":30, "lembap":70}');
+  message = new Paho.MQTT.Message('{"suhu":30, "lembap":70}');
   //message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam";
   //client.send(message);
   console.log(client.getTraceLog());
