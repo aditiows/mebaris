@@ -41,28 +41,32 @@ function onConnectionLost(responseObject) {
   }
 }
 
-function myHumid() {
-	var msg = onMessageArrived;
-	var mpls = msg.payloadString;
-    	var myData = JSON.parse(mpls);
-	if (message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
+function myHumid(humid) {
+	if (message.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
+	let msg = onMessageArrived;
+	let mpls = msg.payloadString;
+    	let myData = JSON.parse(mpls);
+	};
+	const humid = document.getElementByid(humid);
+	return humid.innerHTML;
     	console.log(myData.lembap+"%")
 		};
 	}
 
-function myTemp() {
-	var msg = onMessageArrived;
-	var mpls = msg.payloadString;
-    	var myData = JSON.parse(mpls);
-	if (message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
-    	console.log(myData.suhu+"°")
-		};
+function myTemp(temp) {
+	if (message.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
+	let msg = onMessageArrived;
+	let mpls = msg.payloadString;
+    	let myData = JSON.parse(mpls);
+	};
+    	console.log(myData.suhu+"°");
+	const temp = document.getElementByid(temp);	
+	return temp.innerHTML;
 	}
 
 // bila ada pesan masuk
 function onMessageArrived(msg) {
     	myHumid();
 	myTemp();
-	console.log(msg.payloadString)
-	return;
-}
+	console.log(msg.payloadString);
+	}
