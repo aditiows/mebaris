@@ -53,7 +53,7 @@ function onMessageArrived(msg) {
 
 //pengantar untuk display ke web
 function myTemp() {
-	onMessageArrived;
+	onMessageArrived(msg);
     var mpls = msg.payloadString;
     var myData = JSON.parse(mpls);
     var dataTemp = document.getElementById("suhu");
