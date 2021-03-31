@@ -51,7 +51,7 @@ function onMessageArrived(msg) {
     }
 }
 
-var mpls = message.payloadString;
+var mpls = onMessageArrived.payloadString;
 var myData = JSON.parse(mpls);
 var dataHum = document.getElementById("lembap");
 var dataTemp = document.getElementById("suhu");
