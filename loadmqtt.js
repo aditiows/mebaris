@@ -46,7 +46,7 @@ function onMessageArrived(msg) {
     if(message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam") {
     console.log(msg.payloadString);
     }
-    else if(message.destinationName = "mebaris_M234jkjDS4Jk23j") {
-    console.log(msg.destinationName+" "+msg.payloadString);
+    else {
+    console.log("Status "+msg.payloadString);
     }
 }
