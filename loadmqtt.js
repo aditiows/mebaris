@@ -47,6 +47,6 @@ function onMessageArrived(msg) {
     console.log(msg.payloadString);
     }
     else if(message.destinationName = "mebaris_M234jkjDS4Jk23j") {
-    console.log(message.destinationName+" "+msg.payloadString);
+    console.log(msg.destinationName+" "+msg.payloadString);
     }
 }
