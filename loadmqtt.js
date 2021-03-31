@@ -6,7 +6,7 @@ client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 
 // connect the client
-client.reconnect = true;
+// client.reconnect = true;
 client.connect({onSuccess:onConnect,
                 useSSL: true});
 console.log("mencoba untuk terkoneksi...");
