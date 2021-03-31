@@ -45,7 +45,6 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(msg) {
     if(message.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
     console.log(msg.payloadString);
-      myHumid();
     }
     else {
     console.log("Status "+msg.payloadString);
