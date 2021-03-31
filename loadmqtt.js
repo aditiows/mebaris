@@ -50,3 +50,15 @@ function onMessageArrived(msg) {
     console.log("Status "+msg.payloadString);
     }
 }
+
+function myHumid() {
+	if (onMessageArrived = true) {
+    console.log(myData.lembap+"%");
+	}
+}
+
+function myTemp() {
+	if (onMessageArrived = true) {
+    console.log(myData.suhu+"°");
+	}
+}
