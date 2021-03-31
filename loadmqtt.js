@@ -43,16 +43,22 @@ function onConnectionLost(responseObject) {
 
 // bila ada pesan masuk
 function onMessageArrived(msg) {
-    	function myHumid() {
-		var mpls = message.payloadString;
-    		var myData = JSON.parse(mpls);
-   		var dataHum = document.getElementById("lembap");
+    	myHumid();
+	myTemp();
+	return;
+}
+	
+function myHumid() {
+	var mpls = message.payloadString;
+    	var myData = JSON.parse(mpls);
+   	var dataHum = document.getElementById("lembap");
     	console.log(myData.lembap+"%");
 	};
-	function myTemp() {
-		var mpls = message.payloadString;
-    		var myData = JSON.parse(mpls);
-   		var dataTemp = document.getElementById("suhu");
+
+function myTemp() {
+	var mpls = message.payloadString;
+    	var myData = JSON.parse(mpls);
+   	var dataTemp = document.getElementById("suhu");
     	console.log(myData.suhu+"°");
 	};
 }
