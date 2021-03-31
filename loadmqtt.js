@@ -48,14 +48,14 @@ function onMessageArrived(msg) {
 	return;
 }
 	
-function myHumid() {
+var myHumid = function humid() {
 	var mpls = message.payloadString;
     	var myData = JSON.parse(mpls);
    	var dataHum = document.getElementById("lembap");
     	console.log(myData.lembap+"%");
 	}
 
-function myTemp() {
+var myTemp = function temp() {
 	var mpls = message.payloadString;
     	var myData = JSON.parse(mpls);
    	var dataTemp = document.getElementById("suhu");
