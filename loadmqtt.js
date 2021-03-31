@@ -47,16 +47,12 @@ function onMessageArrived(msg) {
 		var mpls = message.payloadString;
     		var myData = JSON.parse(mpls);
    		var dataHum = document.getElementById("lembap");
-	if (onMessageArrived = true) {
     	console.log(myData.lembap+"%");
-		}
 	};
 	function myTemp() {
 		var mpls = message.payloadString;
     		var myData = JSON.parse(mpls);
    		var dataTemp = document.getElementById("suhu");
-	if (onMessageArrived = true) {
     	console.log(myData.suhu+"°");
-		}
 	};
 }
