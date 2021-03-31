@@ -41,27 +41,25 @@ function onConnectionLost(responseObject) {
   }
 }
 
-function myHumid(humid) {
+// bila ada pesan masuk
+function onMessageArrived(msg) {
 	if (message.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
+    	myHumid();
+	myTemp();
+	console.log(msg.payloadString);
+		}
+	}
+
+function myHumid(humid) {
 	let msg = onMessageArrived;
 	let mpls = msg.payloadString;
     	let myData = JSON.parse(mpls);
 	console.log(myData.lembap+"%")
-		}
 	}
 
 function myTemp(temp) {
-	if (message.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
 	let msg = onMessageArrived;
 	let mpls = msg.payloadString;
     	let myData = JSON.parse(mpls);
 	console.log(myData.suhu+"°");
-		}
-	}
-
-// bila ada pesan masuk
-function onMessageArrived(msg) {
-    	myHumid();
-	myTemp();
-	console.log(msg.payloadString);
 	}
