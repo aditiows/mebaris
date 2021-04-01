@@ -17,7 +17,7 @@ function onConnect() {
   console.log("Koneksi Berhasil");
   client.subscribe("mebaris_M234jkjDS4Jk23j");
   client.subscribe("mebaris_M234jkjDS4Jk23j/nurusallam");
-  message = new Paho.MQTT.Message('{"suhu":30, "lembap":70}');
+  //message = new Paho.MQTT.Message('{"suhu":30, "lembap":70}');
   //message.destinationName = "mebaris_M234jkjDS4Jk23j/nurusallam";
   //client.send(message);
   console.log(client.getTraceLog());
@@ -44,13 +44,13 @@ function onConnectionLost(responseObject) {
 // bila ada pesan masuk
 function onMessageArrived(msg) {
 	if (msg.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
-	var myData = JSON.parse(message.payloadString);
+	var myData = JSON.parse(msg.payloadString);
 	console.log(myData.suhu+"°");	
 	console.log(myData.lembap+"%")
 		}
 	else if (msg.destinationName == "mebaris_M234jkjDS4Jk23j") {
-	console.log("Status: "+message.payloadString)
+	console.log("Status: "+msg.payloadString)
 	     	}
-	else {console.log("Pesan :"+message.payloadString)
+	else {console.log("Pesan :"+msg.payloadString)
 		}
 	}
