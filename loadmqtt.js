@@ -50,8 +50,8 @@ function onMessageArrived(msg) {
 	console.log("Status: "+msg.payloadString)
 	     	}
 	else if (msg.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
-	myData = JSON.parse(msg.payloadString);
-	myTemp = console.log("Temperature: "+myData.suhu+"°");
+	var myData = JSON.parse(msg.payloadString);
+	var myTemp = console.log("Temperature: "+myData.suhu+"°");
 	console.log("Kelembapan: "+myData.lembap+"%")
 		}
 	else {console.log("Pesan :"+msg.payloadString)
