@@ -42,8 +42,8 @@ function onConnectionLost(responseObject) {
 }
 
 // bila ada pesan masuk
-var myData;
-var myTemp;
+var myData = 0;
+var myTemp = 0;
 
 function onMessageArrived(msg) {
 	if (msg.destinationName == "mebaris_M234jkjDS4Jk23j") {
@@ -51,7 +51,7 @@ function onMessageArrived(msg) {
 	     	}
 	else if (msg.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
 	myData = JSON.parse(msg.payloadString);
-	var myTemp = console.log("Temperature: "+myData.suhu+"°");
+	myTemp = console.log("Temperature: "+myData.suhu+"°");
 	console.log("Kelembapan: "+myData.lembap+"%")
 		}
 	else {console.log("Pesan :"+msg.payloadString)
