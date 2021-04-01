@@ -47,7 +47,7 @@ function onMessageArrived(msg) {
     	let myData = JSON.parse(message.payloadString);
 	console.log(myData.suhu+"°");	
 	console.log(myData.lembap+"%")
-		};
+		}
 	else {console.log(message.payloadString)
 	     }
 	}
