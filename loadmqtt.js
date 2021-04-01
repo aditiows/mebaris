@@ -41,16 +41,17 @@ function onConnectionLost(responseObject) {
   }
 }
 
+var myData = JSON.parse(message.payloadString);
+
 // bila ada pesan masuk
 function onMessageArrived(msg) {
 	if (msg.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
-    	let myData = JSON.parse(msg.payloadString);
 	console.log(myData.suhu+"°");	
 	console.log(myData.lembap+"%")
 		}
 	else if (msg.destinationName == "mebaris_M234jkjDS4Jk23j") {
-	console.log("Status: "+msg.payloadString)
+	console.log("Status: "+message.payloadString)
 	     	}
-	else {console.log("Pesan :"+msg.payloadString)
+	else {console.log("Pesan :"+message.payloadString)
 		}
 	}
