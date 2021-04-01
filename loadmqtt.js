@@ -48,7 +48,7 @@ function onMessageArrived(msg) {
 	console.log(myData.suhu+"°");	
 	console.log(myData.lembap+"%")
 		}
-	else if {(message.destinationName == "mebaris_M234jkjDS4Jk23j") {
+	else if (message.destinationName == "mebaris_M234jkjDS4Jk23j") {
 	console.log("Status: "+message.payloadString)
 	     	}
 	else {console.log("Pesan :"+message.payloadString)
