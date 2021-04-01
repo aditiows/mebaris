@@ -44,22 +44,9 @@ function onConnectionLost(responseObject) {
 // bila ada pesan masuk
 function onMessageArrived(msg) {
 	if (message.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
-    	myHumid();
-	myTemp();
-	console.log(msg.payloadString);
-		}
-	}
-
-function myHumid(humid) {
-	let msg = onMessageArrived;
-	let mpls = msg.payloadString;
-    	let myData = JSON.parse(mpls);
+    	let myData = JSON.parse(message.payloadString);
+	console.log(myData.suhu+"°");	
 	console.log(myData.lembap+"%")
 	}
+	else {console.log(message.payloadString)
 
-function myTemp(temp) {
-	let msg = onMessageArrived;
-	let mpls = msg.payloadString;
-    	let myData = JSON.parse(mpls);
-	console.log(myData.suhu+"°");
-	}
