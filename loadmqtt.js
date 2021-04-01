@@ -41,11 +41,10 @@ function onConnectionLost(responseObject) {
   }
 }
 
-var myData = JSON.parse(message.payloadString);
-
 // bila ada pesan masuk
 function onMessageArrived(msg) {
 	if (msg.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
+	var myData = JSON.parse(message.payloadString);
 	console.log(myData.suhu+"°");	
 	console.log(myData.lembap+"%")
 		}
