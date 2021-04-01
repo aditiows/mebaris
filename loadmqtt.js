@@ -44,7 +44,7 @@ function onConnectionLost(responseObject) {
 // bila ada pesan masuk
 function onMessageArrived(msg) {
 	if (msg.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
-	var myData = JSON.parse(msg.payloadString);
+	myData = JSON.parse(msg.payloadString);
 	console.log(myData.suhu+"°");	
 	console.log(myData.lembap+"%")
 		}
