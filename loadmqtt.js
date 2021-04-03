@@ -51,7 +51,7 @@ function onMessageArrived(msg) {
 	     	}
 	else if (msg.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
 	var myData = JSON.parse(msg.payloadString);
-	var myTemp = console.log(myData.suhu+"°");
+	var myTemp = document.getElementbyId("suhu").innerHTML = (myData.suhu+"°");
 	console.log("Kelembapan: "+myData.lembap+"%")
 		}
 	else {console.log("Pesan :"+msg.payloadString)
