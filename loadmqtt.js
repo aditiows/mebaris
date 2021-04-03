@@ -44,6 +44,7 @@ function onConnectionLost(responseObject) {
 // bila ada pesan masuk
 var myData = 0;
 var myTemp = 0;
+var myHumid = 0;
 
 function onMessageArrived(msg) {
 	if (msg.destinationName == "mebaris_M234jkjDS4Jk23j") {
@@ -52,7 +53,7 @@ function onMessageArrived(msg) {
 	else if (msg.destinationName == "mebaris_M234jkjDS4Jk23j/nurusallam") {
 	var myData = JSON.parse(msg.payloadString);
 	var myTemp = document.getElementById("suhu").innerHTML = (myData.suhu+"°");
-	console.log("Kelembapan: "+myData.lembap+"%")
+	var myHumid = document.getElementById("lembap").innerHTML = (myData.lembap+"%")
 		}
 	else {console.log("Pesan :"+msg.payloadString)
 		}
