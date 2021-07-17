@@ -1,5 +1,5 @@
 // Create a client instance
-client = new Paho.MQTT.Client("broker.emqx.io", Number(8083), "ClientID"+Math.random().toString(36).substr(2, 9));
+client = new Paho.MQTT.Client("broker.emqx.io", Number(8084), "ClientID"+Math.random().toString(36).substr(2, 9));
 client.startTrace();
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
